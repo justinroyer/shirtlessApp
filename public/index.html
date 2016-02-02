@@ -5,6 +5,34 @@
 <gcse:searchresults defaultToImageSearch="true" disableWebSearch="false"></gcse:searchresults>
 
 <script>
+	var myCallback = function() {
+	  	if (document.readyState == 'complete') {
+	  		console.log('calling back!');
+	    // Document is ready when CSE element is initialized.
+	    // Render an element with both search box and search results in div with id 'test'.
+	    	google.search.cse.element.render(
+	        {
+	      		div: "test",
+	          	tag: 'search'
+	     	});
+	  	} else {
+	    // Document is not ready yet, when CSE element is initialized.
+	    	google.setOnLoadCallback(function() {
+	       // Render an element with both search box and search results in div with id 'test'.
+	        google.search.cse.element.render(
+	            {
+	              div: "test",
+	              tag: 'search'
+	            });
+			}, true);
+	  	}
+	};
+
+	window.__gcse = {
+		parsetags: 'explicit',
+		callback: myCallback
+	};
+
     (function() {
 	    var cx = '015206230483323128689:6amziptvy8s';
 	    var gcse = document.createElement('script');
@@ -16,12 +44,6 @@
 	    s.parentNode.insertBefore(gcse, s); 
   	})();
 
-  	function submitSearch(){
-  		var $submit = $('input.gsc-search-button');
-	  		$submit.on('click', function(){
-	  			console.log('hi');
-  			});
-  	}
 </script>
 
 
