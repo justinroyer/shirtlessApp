@@ -1,0 +1,29 @@
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<h1>Testing</h1>
+<gcse:searchbox></gcse:searchbox>
+<gcse:searchresults defaultToImageSearch="true" disableWebSearch="false"></gcse:searchresults>
+
+<script>
+    (function() {
+	    var cx = '015206230483323128689:6amziptvy8s';
+	    var gcse = document.createElement('script');
+	    gcse.type = 'text/javascript';
+	    gcse.async = true;
+	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+	        '//cse.google.com/cse.js?cx=' + cx;
+	    searchQuery = gcse.query;
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(gcse, s); 
+  	})();
+
+  	function submitSearch(){
+  		var $submit = $('input.gsc-search-button');
+	  		$submit.on('click', function(){
+	  			var inputQuery = $('gcs-input');
+	  			console.log('hi');
+  			});
+  	}
+</script>
+
+
