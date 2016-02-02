@@ -12,7 +12,6 @@
 	    gcse.async = true;
 	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
 	        '//cse.google.com/cse.js?cx=' + cx;
-	    searchQuery = gcse.query;
 	    var s = document.getElementsByTagName('script')[0];
 	    s.parentNode.insertBefore(gcse, s); 
   	})();
@@ -20,7 +19,6 @@
   	function submitSearch(){
   		var $submit = $('input.gsc-search-button');
 	  		$submit.on('click', function(){
-	  			var inputQuery = $('gcs-input');
 	  			console.log('hi');
   			});
   	}
